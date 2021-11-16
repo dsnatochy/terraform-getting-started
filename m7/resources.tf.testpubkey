@@ -1,0 +1,28 @@
+###### PROVIDERS ############
+provider "aws" {
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
+  region     = var.region
+}
+
+# provider "azurerm" {
+#   subscription_id = var.arm_subscription_id
+#   client_id = var.arm_principal
+#   client_secret = var.arm_password
+#   tenant_id = var.tenant_id
+#   alias = "arm-1"
+#   features {}
+# }
+
+resource "aws_key_pair" "pluralsightkey" {
+  key_name = "PluralsightKeys"
+  # public_key = "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2MRn8G8iUr0bn8JeU3Kd\n/XAm0LTTCbN0KB8MLx9XgezPSj+XRgA/i00yP3lPz4/i/tlGevi8URTrDpfoxkVx\n6nEqnLUdNsJiH/pbCFc5FZA6agMwLXiqSF7xsSLGuf//DqZWKgPFol0700w1yO8V\nvYEZre3Qm/Y4ML6WSQx+OVGi+j4Pvz0QgvMgPHVbpLHElfQdF+p1NcLo7RpQMFEe\n4aWCmqhcENKAEhmJGITzpscvHCmiaHWFpWCdlxjTkpxUns5WFGy2EmM9FDLmBO0Q\nDBNnu3YVd7f1je30MWrKJDRsG/dAgewPNKshRXnnXAf47fiKG5hOhoWt9zrUtEKv\nDQIDAQAB\n-----END PUBLIC KEY-----\n"
+  public_key = file("/Users/dnatochy/Downloads/PluralsightKeys-pub.pem")
+}
+
+
+#Random ID
+resource "random_integer" "rand" {
+  min = 10000
+  max = 99999
+}
