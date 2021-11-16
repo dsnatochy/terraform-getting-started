@@ -1,6 +1,6 @@
 ### one of the way to define variables in terraform
-# aws_access_key = "AKIATB4FGGFWZFP3W4EK"
-# aws_secret_key = "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"
+# aws_access_key = "{access_key}"
+# aws_secret_key = "{secret_key}"
 
 key_name         = "PluralsightKeys"
 private_key_path = "/Users/dnatochy/Downloads/PluralsightKeys.pem"
@@ -9,10 +9,10 @@ bucket_name_prefix = "globo"
 environment_tag    = "dev"
 billing_code_tag   = "ACCT8675309"
 
-arm_subscription_id = "4cedc5dd-e3ad-468d-bf66-32e31bdb9148"
-arm_principal = "cloud_user_p_23cceb91@azurelabs.linuxacademy.com"
-arm_password = "QNNnogeotPGmqn5!dp31"
-tenant_id = "3617ef9b-98b4-40d9-ba43-e1ed6709cf0d" # output of az login
+arm_subscription_id = "{sub_id}"
+arm_principal = "{principal}"
+arm_password = "{password}"
+tenant_id = "{tenant_id}" # output of az login
 dns_zone_name = "globomantics.xyz"
 dns_resource_group = "dns"
 
